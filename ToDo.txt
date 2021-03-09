@@ -1,0 +1,9 @@
+Communication :
+
+    * Passer les messages en JSON : Permet de faire passer les paramètres de jeux
+    * Permettre l'envoi de messages
+
+Règles de jeux :
+
+    * Faire le lancé de dés avec les images
+    

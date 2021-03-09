@@ -1,4 +1,3 @@
-
 import threading
 import socket
 import time
@@ -49,6 +48,11 @@ class Client():
             self.tidy_up()
         else:
             print(data)
+
+#UI allow to get the data to connect from the UI
+
+    def sendData(self, message):
+        self.send(message)
 
 
 if __name__ == "__main__":

@@ -1,9 +1,9 @@
-#Game rules : Checking dices; Winning player;
+#Game rules : Checking dices, Winning player;
 class GameRules():
 
 
     def n1(dices: list) -> int:
-        """ Number of one """
+# Number of one 
         score = 0
         for i in range(5):
             if dices[i] == 1:
@@ -12,7 +12,7 @@ class GameRules():
      
  
     def n2(dices: list) -> int:
-        """ Number of two """
+        # Number of two 
         score = 0
         for i in range(5):
             if dices[i] == 2:
@@ -21,7 +21,7 @@ class GameRules():
      
  
     def n3(dices: list) -> int:
-        """ Number of three """
+        # Number of three 
         score = 0
         for i in range(5):
             if dices[i] == 3:
@@ -30,7 +30,7 @@ class GameRules():
      
  
     def n4(dices: list) -> int:
-        """ Number of four """
+        # Number of four 
         score = 0
         for i in range(5):
             if dices[i] == 4:
@@ -39,7 +39,7 @@ class GameRules():
      
  
     def n5(dices: list) -> int:
-        """ Number of five """
+        # Number of five 
         score = 0
         for i in range(5):
             if dices[i] == 5:
@@ -48,7 +48,7 @@ class GameRules():
      
  
     def n6(dices: list) -> int:
-        """ Number of six """
+        # Number of six 
         score = 0
         for i in range(5):
             if dices[i] == 6:
@@ -56,8 +56,8 @@ class GameRules():
         return score
      
  
-    def n3_oak(dices: list) -> int:
-        """ Check for three-of-a-kind """
+    def brelan(dices: list) -> int:
+        # Check for three-of-a-kind 
         sorted_dices = sorted(dices)
         count = 1
         for i in range(1, 5):
@@ -71,8 +71,8 @@ class GameRules():
         return 0
  
  
-    def n4_oak(dices: list) -> int:
-        """ Check for four-of-a-kind """
+    def carre(dices: list) -> int:
+        # Check for four-of-a-kind 
         sorted_dices = sorted(dices)
         count = 1
         for i in range(1, 5):
@@ -88,7 +88,7 @@ class GameRules():
  
  
     def full(dices: list) -> int:
-        """ Check for full """
+        #Check for full
         sorted_dices = sorted(dices)
         count = 1
         two, three = False, False
@@ -108,8 +108,8 @@ class GameRules():
         return 0
  
  
-    def small_s(dices: list) -> int:
-        """ Check for sequences of length 4 """
+    def petiteSuite(dices: list) -> int:
+        #Check for sequences of length 4
         sorted_dices = sorted(dices)
         count = 1
         for i in range(1, 5):
@@ -123,8 +123,8 @@ class GameRules():
         return 0
  
  
-    def large_s(dices: list) -> int:
-        """ Check for sequences of length 5 """
+    def grandeSuite(dices: list) -> int:
+        #Check for sequences of length 5
         sorted_dices = sorted(dices)
         count = 1
         for i in range(1, 5):
@@ -139,8 +139,8 @@ class GameRules():
         return 0
  
  
-    def yahtzee(dices: list) -> int:
-        """ Check for 5 same dices """
+    def yams(dices: list) -> int:
+        #Check for 5 same dices
         for i in range(1, 5):
             if dices[i] != dices[i - 1]:
                 return 0
@@ -149,5 +149,5 @@ class GameRules():
  
  
     def chance(dices: list) -> int:
-        """ Actually returns the sum of dices """
+        # Sum of dices
         return sum(dices)
