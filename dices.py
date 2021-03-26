@@ -1,7 +1,7 @@
 try:
     import random
 except ImportError :  
-  print("exception in importing module")
+  print("exception in importing module in Dices")
 
 
 class Dice(object):
@@ -15,7 +15,22 @@ class Dice(object):
 
     def shuffleDices(self, dices):
         for i in range(len(self.dicesNumbers)):
-            dices[i]= random.randint(1, 6)
+            if (self.PageGame.checkDiceOne.get()==0):
+                dices[0]= random.randint(1, 6)
+                #change dice value
+            elif (self.PageGame.checkDiceTwo.get()==0):
+                dices[1]= random.randint(1, 6)
+                #cahnge dice value
+            elif (self.PageGame.checkDiceThree.get()==0):
+                dices[2]= random.randint(1, 6)
+                #cahnge dice value
+            elif (self.PageGame.checkDiceFour.get()==0):
+                dices[3]= random.randint(1, 6)
+                #cahnge dice value
+            elif (self.PageGame.checkDiceFive.get()==0):
+                dices[4]= random.randint(1, 6)
+                #cahnge dice value
+            # dices[i]= random.randint(1, 6)
         self.dicesNumbers = dices
         self.displayDices(self.dicesNumbers)
         self.getDicesUI()           

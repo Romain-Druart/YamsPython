@@ -4,8 +4,10 @@ try:
     from tkinter import scrolledtext, ttk, messagebox
     from PIL import Image, ImageTk
     from dices import Dice
+    from gameRules import GameRules
+    import random
 except ImportError :  
-  print("exception in importing module")
+  print("exception in importing module in gameUI")
 
 ######################## ClientApp ################################
 
@@ -100,7 +102,9 @@ class GamePage(tk.Frame):
         tk.Frame.__init__(self, parent)
         self.controller = controller
         self.Dice = Dice()
+        self.GameRules = GameRules()
         self.dicesUI = self.Dice.dicesUI
+
 
         #allow the player to only toss dices 3 times
         self.numberOfToss = 0
@@ -175,23 +179,23 @@ class GamePage(tk.Frame):
         #Dice 1
         diceOne = (Image.open('./assets/dices/de6.png')).resize((100,100)); renderDiceOne = ImageTk.PhotoImage(diceOne); imgDiceOne = tk.Label(self, image=renderDiceOne)
         imgDiceOne.image = renderDiceOne; imgDiceOne.grid(row = 9, column = 4, rowspan=4)
-        checkDiceOne = tk.Checkbutton(self); checkDiceOne.grid(row = 13, column = 4)
+        checkDiceOne = tk.Checkbutton(self, onvalue=1, offvalue=0); checkDiceOne.grid(row = 13, column = 4)
         #Dice 2
         diceTwo = (Image.open('./assets/dices/de6.png')).resize((100,100)); renderDiceTwo = ImageTk.PhotoImage(diceTwo); imgDiceTwo = tk.Label(self, image=renderDiceTwo)
         imgDiceTwo.image = renderDiceTwo; imgDiceTwo.grid(row = 9, column = 5, rowspan=4)
-        checkDiceTwo = tk.Checkbutton(self); checkDiceTwo.grid(row = 13, column = 5)
+        checkDiceTwo = tk.Checkbutton(self, onvalue=1, offvalue=0); checkDiceTwo.grid(row = 13, column = 5)
         #Dice 3
         diceThree = (Image.open('./assets/dices/de6.png')).resize((100,100)); renderDiceThree = ImageTk.PhotoImage(diceThree); imgDiceThree = tk.Label(self, image=renderDiceThree)
         imgDiceThree.image = renderDiceThree; imgDiceThree.grid(row = 9, column = 6, rowspan=4)
-        checkDiceThree = tk.Checkbutton(self); checkDiceThree.grid(row = 13, column = 6)
+        checkDiceThree = tk.Checkbutton(self, onvalue=1, offvalue=0); checkDiceThree.grid(row = 13, column = 6)
         #Dice 4
         diceFour = (Image.open('./assets/dices/de6.png')).resize((100,100)); renderDiceFour = ImageTk.PhotoImage(diceFour); imgDiceFour = tk.Label(self, image=renderDiceFour)
         imgDiceFour.image = renderDiceFour; imgDiceFour.grid(row = 9, column = 7, rowspan=4)
-        checkDiceFour = tk.Checkbutton(self); checkDiceFour.grid(row = 13, column = 7)
+        checkDiceFour = tk.Checkbutton(self, onvalue=1, offvalue=0); checkDiceFour.grid(row = 13, column = 7)
         #Dice 5
         diceFive = (Image.open('./assets/dices/de6.png')).resize((100,100)); renderDiceFive = ImageTk.PhotoImage(diceFive); imgDiceFive = tk.Label(self, image=renderDiceFive)
         imgDiceFive.image = renderDiceFive; imgDiceFive.grid(row = 9, column = 8, rowspan=4)
-        checkDiceFive = tk.Checkbutton(self); checkDiceFive.grid(row = 13, column = 8)
+        checkDiceFive = tk.Checkbutton(self, onvalue=1, offvalue=0); checkDiceFive.grid(row = 13, column = 8)
         ################## END PAGEGAME #####################
 
         #################### Interface Messagerie #######################
@@ -216,19 +220,37 @@ class GamePage(tk.Frame):
         else:
             comboBoxSelectedValue = self.comboChooseCombine.get()
             self.btnShuffleDices.config(state="normal")
-            print(comboBoxSelectedValue)
+            self.btnValidateDices.config(state="disable")
+            self.GameRules.ReturnScore(comboBoxSelectedValue)
+            # print(comboBoxSelectedValue)
         #reset count for dice toss
-        
         self.numberOfToss = 0
         return comboBoxSelectedValue
 
     def shuffleDicesUI(self): #shuffle dices, send data to json to display dices for oppennent
         self.Dice.shuffleDices(self.Dice.dicesNumbers)
+        for i in range(len(self.dicesNumbers)):
+            if (checkDiceOne.get()==0):
+                dices[0]= random.randint(1, 6)
+                #change dice value
+            elif (checkDiceTwo.get()==0):
+                dices[1]= random.randint(1, 6)
+                #cahnge dice value
+            elif (checkDiceThree.get()==0):
+                dices[2]= random.randint(1, 6)
+                #cahnge dice value
+            elif (checkDiceFour.get()==0):
+                dices[3]= random.randint(1, 6)
+                #cahnge dice value
+            elif (checkDiceFive.get()==0):
+                dices[4]= random.randint(1, 6)
+        self.btnValidateDices.config(state="normal")
         if self.numberOfToss < 2:
             self.numberOfToss += 1
             print(self.numberOfToss)
         else:
             self.btnShuffleDices.config(state="disable")
+            
         print('shuffle')
         #Dice 1 | Remplace le dé affiché par le dé qui correspond au lancé actuel
         diceOne = (Image.open(self.dicesUI[0])).resize((100,100)); renderDiceOne = ImageTk.PhotoImage(diceOne); imgDiceOne = tk.Label(self, image=renderDiceOne)

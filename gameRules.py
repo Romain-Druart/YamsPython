@@ -3,16 +3,19 @@ try:
     from gameUI import label_player2_one, label_player2_two, label_player2_three, label_player2_four, label_player2_five, label_player2_six, label_player2_top_sub_total, label_player2_bonus, label_player2_brelan, label_player2_carre, label_player2_full, label_player2_small_suite, label_player2_great_suite, label_player2_yams, label_player2_chance, label_player2_sub_total, label_player2_total
     import tkinter as tk
     from tkinter import messagebox
-    from dices import validateDices, shuffleDices, dicesNumbers, getDices
+    from dices import Dice
 except ImportError :  
-  print("exception in importing module")
+  print("exception in importing module in gameRules")
 
 
 #Game rules : Checking dices, Winning player;
-class GameRules():
-    def __init__(self, GameRules, controller):
-        self.controller = controller
+class GameRules(object):
+    # def __init__(self, GameRules, controller):
+    def __init__(self, *args, **kwargs):
+        # self.controller = controller
         self.GameRules = GameRules
+        self.Dice = Dice()
+        self.getDices = self.Dice.getDices() 
         self.GamePage = GamePage
         self.score = 0
 
@@ -21,15 +24,16 @@ class GameRules():
         self.checkYams = False; self.checkChance = False
 
     def ReturnScore(self, combine):
-        combine = validateDices()
-        dices = getDices() 
+        # combine = validateDices()
+        # print('Combine = ' + validateDices())
+        dices = self.getDices 
         if combine == "1":
             if self.checkOne == "False":
                 if 1 not in dices:
                     confirmBox = tk.messagebox.askquestion("Confirmation", "Vous avez choisi : 1 = 0 points")
                     if confirmBox == 'yes':
-                        label_player1_one.config(text=self.n1(dices))
-                        label_player1_total.config(text=self.n1(dices))
+                        self.GamePage.label_player1_one.config(text=self.n1(dices))
+                        self.GamePage.label_player1_total.config(text=self.n1(dices))
                 else:
                     confirmBox = tk.messagebox.askquestion("Confirmation", "Vous avez choisi : 1")
                     if confirmBox == 'yes':
