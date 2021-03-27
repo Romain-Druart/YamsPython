@@ -99,7 +99,7 @@ class GameRules(object):
             else:
                 count = 1
             if count == 4:
-                return 40 + sum(dices)
+                return sum(dices)
         return 0
 
 
@@ -119,7 +119,7 @@ class GameRules(object):
             if count == 3:
                 three = True
         if two and three:
-            return 25 + sum(dices)
+            return 25
         return 0
     
     
@@ -159,7 +159,7 @@ class GameRules(object):
         for i in range(1, 5):
             if dices[i] != dices[i - 1]:
                 return 0
-        return 50 + sum(dices)
+        return 50
 
 
     def chance(self, dices: list) -> int:
