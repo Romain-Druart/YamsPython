@@ -138,44 +138,44 @@ class GamePage(tk.Frame):
         self.label_total = tk.Label(self, text = "Total :"); self.label_total.grid(row = 18, column = 0, sticky ='w')
 
         # Affichage des points du joueur 1
-        self.label_player1_name = tk.Label(self, text = "player1_name"); self.label_player1_name.grid(row = 1, column = 1)
-        self.label_player1_one = tk.Label(self, text = "player1_one"); self.label_player1_one.grid(row = 2, column = 1)
-        self.label_player1_two = tk.Label(self, text = "player1_two"); self.label_player1_two.grid(row = 3, column = 1)
-        self.label_player1_three = tk.Label(self, text = "player1_three"); self.label_player1_three.grid(row = 4, column = 1)
-        self.label_player1_four = tk.Label(self, text = "player1_four"); self.label_player1_four.grid(row = 5, column = 1)
-        self.label_player1_five = tk.Label(self, text = "player1_five"); self.label_player1_five.grid(row = 6, column = 1)
-        self.label_player1_six = tk.Label(self, text = "player1_six"); self.label_player1_six.grid(row = 7, column = 1)
-        self.label_player1_top_sub_total = tk.Label(self, text = "player1_top_sub_total"); self.label_player1_top_sub_total.grid(row = 8, column = 1)
-        self.label_player1_bonus = tk.Label(self, text = "player1_bonus"); self.label_player1_bonus.grid(row = 9, column = 1, sticky="n")
-        self.label_player1_brelan = tk.Label(self, text = "player1_brelan"); self.label_player1_brelan.grid(row = 10, column = 1)
-        self.label_player1_carre = tk.Label(self, text = "player1_carre"); self.label_player1_carre.grid(row = 11, column = 1)
-        self.label_player1_full = tk.Label(self, text = "player1_full"); self.label_player1_full.grid(row = 12, column = 1)
-        self.label_player1_small_suite = tk.Label(self, text = "player1_small_suite"); self.label_player1_small_suite.grid(row = 13, column = 1)
-        self.label_player1_great_suite = tk.Label(self, text = "player1_great_suite"); self.label_player1_great_suite.grid(row = 14, column = 1)
-        self.label_player1_yams = tk.Label(self, text = "player1_yams"); self.label_player1_yams.grid(row = 15, column = 1)
-        self.label_player1_chance = tk.Label(self, text = "player1_chance"); self.label_player1_chance.grid(row = 16, column = 1)
-        self.label_player1_sub_total = tk.Label(self, text = "player1_sub_total"); self.label_player1_sub_total.grid(row = 17, column = 1)
-        self.label_player1_total = tk.Label(self, text = "player1_total"); self.label_player1_total.grid(row = 18, column = 1)
+        self.label_player1_name = tk.Label(self, text = "."); self.label_player1_name.grid(row = 1, column = 1)
+        self.label_player1_one = tk.Label(self, text = "."); self.label_player1_one.grid(row = 2, column = 1)
+        self.label_player1_two = tk.Label(self, text = "."); self.label_player1_two.grid(row = 3, column = 1)
+        self.label_player1_three = tk.Label(self, text = "."); self.label_player1_three.grid(row = 4, column = 1)
+        self.label_player1_four = tk.Label(self, text = "."); self.label_player1_four.grid(row = 5, column = 1)
+        self.label_player1_five = tk.Label(self, text = "."); self.label_player1_five.grid(row = 6, column = 1)
+        self.label_player1_six = tk.Label(self, text = "."); self.label_player1_six.grid(row = 7, column = 1)
+        self.label_player1_top_sub_total = tk.Label(self, text = "  0  "); self.label_player1_top_sub_total.grid(row = 8, column = 1)
+        self.label_player1_bonus = tk.Label(self, text = "  0  "); self.label_player1_bonus.grid(row = 9, column = 1, sticky="n")
+        self.label_player1_brelan = tk.Label(self, text = "."); self.label_player1_brelan.grid(row = 10, column = 1)
+        self.label_player1_carre = tk.Label(self, text = "."); self.label_player1_carre.grid(row = 11, column = 1)
+        self.label_player1_full = tk.Label(self, text = "."); self.label_player1_full.grid(row = 12, column = 1)
+        self.label_player1_small_suite = tk.Label(self, text = "."); self.label_player1_small_suite.grid(row = 13, column = 1)
+        self.label_player1_great_suite = tk.Label(self, text = "."); self.label_player1_great_suite.grid(row = 14, column = 1)
+        self.label_player1_yams = tk.Label(self, text = "."); self.label_player1_yams.grid(row = 15, column = 1)
+        self.label_player1_chance = tk.Label(self, text = "."); self.label_player1_chance.grid(row = 16, column = 1)
+        self.label_player1_sub_total = tk.Label(self, text = "  0  "); self.label_player1_sub_total.grid(row = 17, column = 1)
+        self.label_player1_total = tk.Label(self, text = "  0  "); self.label_player1_total.grid(row = 18, column = 1)
 
         # Affichage des points du joueur 2
-        self.label_player2_name = tk.Label(self, text = ""); self.label_player2_name.grid(row = 1, column = 2)
-        self.label_player2_one = tk.Label(self, text = ""); self.label_player2_one.grid(row = 2, column = 2)
-        self.label_player2_two = tk.Label(self, text = ""); self.label_player2_two.grid(row = 3, column = 2)
-        self.label_player2_three = tk.Label(self, text = ""); self.label_player2_three.grid(row = 4, column = 2)
-        self.label_player2_four = tk.Label(self, text = ""); self.label_player2_four.grid(row = 5, column = 2)
-        self.label_player2_five = tk.Label(self, text = ""); self.label_player2_five.grid(row = 6, column = 2)
-        self.label_player2_six = tk.Label(self, text = ""); self.label_player2_six.grid(row = 7, column = 2)
-        self.label_player2_top_sub_total = tk.Label(self, text = ""); self.label_player2_top_sub_total.grid(row = 8, column = 2)
-        self.label_player2_bonus = tk.Label(self, text = ""); self.label_player2_bonus.grid(row = 9, column = 2, sticky = "n")
-        self.label_player2_brelan = tk.Label(self, text = ""); self.label_player2_brelan.grid(row = 10, column = 2)
-        self.label_player2_carre = tk.Label(self, text = ""); self.label_player2_carre.grid(row = 11, column = 2)
-        self.label_player2_full = tk.Label(self, text = ""); self.label_player2_full.grid(row = 12, column = 2)
-        self.label_player2_small_suite = tk.Label(self, text = ""); self.label_player2_small_suite.grid(row = 13, column = 2)
-        self.label_player2_great_suite = tk.Label(self, text = ""); self.label_player2_great_suite.grid(row = 14, column = 2)
-        self.label_player2_yams = tk.Label(self, text = ""); self.label_player2_yams.grid(row = 15, column = 2)
-        self.label_player2_chance = tk.Label(self, text = ""); self.label_player2_chance.grid(row = 16, column = 2)
-        self.label_player2_sub_total = tk.Label(self, text = ""); self.label_player2_sub_total.grid(row = 17, column = 2)
-        self.label_player2_total = tk.Label(self, text = ""); self.label_player2_total.grid(row = 18, column = 2)
+        self.label_player2_name = tk.Label(self, text = "."); self.label_player2_name.grid(row = 1, column = 2)
+        self.label_player2_one = tk.Label(self, text = "."); self.label_player2_one.grid(row = 2, column = 2)
+        self.label_player2_two = tk.Label(self, text = "."); self.label_player2_two.grid(row = 3, column = 2)
+        self.label_player2_three = tk.Label(self, text = "."); self.label_player2_three.grid(row = 4, column = 2)
+        self.label_player2_four = tk.Label(self, text = "."); self.label_player2_four.grid(row = 5, column = 2)
+        self.label_player2_five = tk.Label(self, text = "."); self.label_player2_five.grid(row = 6, column = 2)
+        self.label_player2_six = tk.Label(self, text = "."); self.label_player2_six.grid(row = 7, column = 2)
+        self.label_player2_top_sub_total = tk.Label(self, text = "  0  "); self.label_player2_top_sub_total.grid(row = 8, column = 2)
+        self.label_player2_bonus = tk.Label(self, text = "  0  "); self.label_player2_bonus.grid(row = 9, column = 2, sticky = "n")
+        self.label_player2_brelan = tk.Label(self, text = "."); self.label_player2_brelan.grid(row = 10, column = 2)
+        self.label_player2_carre = tk.Label(self, text = "."); self.label_player2_carre.grid(row = 11, column = 2)
+        self.label_player2_full = tk.Label(self, text = "."); self.label_player2_full.grid(row = 12, column = 2)
+        self.label_player2_small_suite = tk.Label(self, text = "."); self.label_player2_small_suite.grid(row = 13, column = 2)
+        self.label_player2_great_suite = tk.Label(self, text = "."); self.label_player2_great_suite.grid(row = 14, column = 2)
+        self.label_player2_yams = tk.Label(self, text = "."); self.label_player2_yams.grid(row = 15, column = 2)
+        self.label_player2_chance = tk.Label(self, text = "."); self.label_player2_chance.grid(row = 16, column = 2)
+        self.label_player2_sub_total = tk.Label(self, text = "  0  "); self.label_player2_sub_total.grid(row = 17, column = 2)
+        self.label_player2_total = tk.Label(self, text = "  0  "); self.label_player2_total.grid(row = 18, column = 2)
         
         #shuffle dices and choose/apply combine
         self.btnShuffleDices = tk.Button(self, text="Suffle Dices", command=self.shuffleDicesUI); self.btnShuffleDices.grid(row = 14, column = 6)
@@ -226,8 +226,7 @@ class GamePage(tk.Frame):
             tk.messagebox.showwarning(title="Alerte", message="Veuillez selectionner une combinaison valide")
         else:
             comboBoxSelectedValue = self.comboChooseCombine.get()
-            self.btnShuffleDices.config(state="normal")
-            self.btnValidateDices.config(state="disable")
+ 
             self.ReturnScore(comboBoxSelectedValue)
         #reset count for dice toss and clear checkboxs
         self.numberOfToss = 0
@@ -317,8 +316,24 @@ class GamePage(tk.Frame):
 
 
         elif combine == "2":
-            score = self.GameRules.n2(dices)
-            self.label_player1_two.config(text=self.GameRules.n2(dices))
+            if self.label_player1_two.cget("text") == ".":
+                confirmBox = tk.messagebox.askquestion("Confirmation", "Vous avez choisi 2 pour " + str(self.GameRules.n2(dices)) + " points")
+                if confirmBox == 'yes':
+                    score = self.GameRules.n2(dices)
+                    self.label_player1_two.config(text=self.GameRules.n2(dices))
+                    self.btnShuffleDices.config(state="normal")
+                    self.btnValidateDices.config(state="disable")
+                    self.label_player1_total.config(text=self.GameRules.n2(dices)+int(self.label_player1_total.cget("text")))
+                    self.label_player1_top_sub_total.config(text=self.GameRules.n2(dices)+int(self.label_player1_top_sub_total.cget("text")))
+                    self.label_player1_sub_total.config(text=self.GameRules.n2(dices)+int(self.label_player1_sub_total.cget("text")))
+                    try:
+                        #faire la somme des score en haut pour calculer le bonus
+                        print('Hello world')
+                    except :
+                        print('Score inférieur à 63 points')
+
+            else:
+                confirmBox = tk.messagebox.showwarning("Alerte", "Vous avez déjà complété les 2.\nVeuillez choisir une autre combinaison")
         elif combine == "3":
             score = self.GameRules.n3(dices)
         elif combine == "4":

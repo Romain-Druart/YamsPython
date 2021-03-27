@@ -24,7 +24,7 @@ class GameRules(object):
     
     
     def n2(self, dices: list) -> int:
-        print('Player choose 1')
+        print('Player choose 2')
 # Number of two 
         score = 0
         for i in range(5):
@@ -34,7 +34,7 @@ class GameRules(object):
 
     
     def n3(self, dices: list) -> int:
-        print('Player choose 1')
+        print('Player choose 3')
 # Number of three 
         score = 0
         for i in range(5):
@@ -44,7 +44,7 @@ class GameRules(object):
 
 
     def n4(self, dices: list) -> int:
-        print('Player choose 1')
+        print('Player choose 4')
 # Number of four 
         score = 0
         for i in range(5):
@@ -54,7 +54,7 @@ class GameRules(object):
 
         
     def n5(self, dices: list) -> int:
-        print('Player choose 1')
+        print('Player choose 5')
 # Number of five 
         score = 0
         for i in range(5):
@@ -64,7 +64,7 @@ class GameRules(object):
 
 
     def n6(self, dices: list) -> int:
-        print('Player choose 1')
+        print('Player choose 6')
 # Number of six 
         score = 0
         for i in range(5):
@@ -74,7 +74,7 @@ class GameRules(object):
 
 
     def brelan(self, dices: list) -> int:
-        print('Player choose 1')
+        print('Player choose brelan')
 # Check for three-of-a-kind 
         sorted_dices = sorted(dices)
         count = 1
@@ -89,7 +89,7 @@ class GameRules(object):
 
     
     def carre(self, dices: list) -> int:
-        print('Player choose 1')
+        print('Player choose carre')
 # Check for four-of-a-kind 
         sorted_dices = sorted(dices)
         count = 1
@@ -104,7 +104,7 @@ class GameRules(object):
 
 
     def full(self, dices: list) -> int:
-        print('Player choose 1')
+        print('Player choose full')
 #Check for full
         sorted_dices = sorted(dices)
         count = 1
@@ -124,7 +124,7 @@ class GameRules(object):
     
     
     def petiteSuite(self, dices: list) -> int:
-        print('Player choose 1')
+        print('Player choose petite Suite')
 #Check for sequences of length 4
         sorted_dices = sorted(dices)
         count = 1
