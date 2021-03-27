@@ -47,7 +47,6 @@ class ClientApp(tk.Tk):
         self.textView.insert(tk.INSERT, message+"\n")
         self.textView.config(state="disabled") 
 
-
 ######################## End ClientApp ################################
 
 ######################## StartPage ################################
@@ -97,7 +96,7 @@ class ClientSocket(Client):
 ##################### GAMEPAGE ###########################
 
 class GamePage(tk.Frame):
-
+    #Interface de jeu
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         self.controller = controller
@@ -108,7 +107,7 @@ class GamePage(tk.Frame):
         self.dicesUI = [0,0,0,0,0]
         self.dicesNumbers = [0,0,0,0,0]
 
-        #allow the player to choose witch dice he wants to keep and not toss all dices
+        #Allow the player to choose which dice he wants to keep and not toss all dices
         self.isOneChecked = tk.IntVar()
         self.isTwoChecked = tk.IntVar()
         self.isThreeChecked = tk.IntVar()
@@ -160,31 +159,32 @@ class GamePage(tk.Frame):
         self.label_player1_total = tk.Label(self, text = "  0  "); self.label_player1_total.grid(row = 18, column = 1)
 
         # player 2 data
-        self.label_player2_name = tk.Label(self, text = "."); self.label_player2_name.grid(row = 1, column = 2)
-        self.label_player2_one = tk.Label(self, text = "."); self.label_player2_one.grid(row = 2, column = 2)
-        self.label_player2_two = tk.Label(self, text = "."); self.label_player2_two.grid(row = 3, column = 2)
-        self.label_player2_three = tk.Label(self, text = "."); self.label_player2_three.grid(row = 4, column = 2)
-        self.label_player2_four = tk.Label(self, text = "."); self.label_player2_four.grid(row = 5, column = 2)
-        self.label_player2_five = tk.Label(self, text = "."); self.label_player2_five.grid(row = 6, column = 2)
-        self.label_player2_six = tk.Label(self, text = "."); self.label_player2_six.grid(row = 7, column = 2)
-        self.label_player2_top_sub_total = tk.Label(self, text = "  0  "); self.label_player2_top_sub_total.grid(row = 8, column = 2)
-        self.label_player2_bonus = tk.Label(self, text = "  0  "); self.label_player2_bonus.grid(row = 9, column = 2, sticky = "n")
-        self.label_player2_brelan = tk.Label(self, text = "."); self.label_player2_brelan.grid(row = 10, column = 2)
-        self.label_player2_carre = tk.Label(self, text = "."); self.label_player2_carre.grid(row = 11, column = 2)
-        self.label_player2_full = tk.Label(self, text = "."); self.label_player2_full.grid(row = 12, column = 2)
-        self.label_player2_small_suite = tk.Label(self, text = "."); self.label_player2_small_suite.grid(row = 13, column = 2)
-        self.label_player2_great_suite = tk.Label(self, text = "."); self.label_player2_great_suite.grid(row = 14, column = 2)
-        self.label_player2_yams = tk.Label(self, text = "."); self.label_player2_yams.grid(row = 15, column = 2)
-        self.label_player2_chance = tk.Label(self, text = "."); self.label_player2_chance.grid(row = 16, column = 2)
-        self.label_player2_sub_total = tk.Label(self, text = "  0  "); self.label_player2_sub_total.grid(row = 17, column = 2)
-        self.label_player2_total = tk.Label(self, text = "  0  "); self.label_player2_total.grid(row = 18, column = 2)
+        self.label_player2_name = tk.Label(self, text = ""); self.label_player2_name.grid(row = 1, column = 2)
+        self.label_player2_one = tk.Label(self, text = ""); self.label_player2_one.grid(row = 2, column = 2)
+        self.label_player2_two = tk.Label(self, text = ""); self.label_player2_two.grid(row = 3, column = 2)
+        self.label_player2_three = tk.Label(self, text = ""); self.label_player2_three.grid(row = 4, column = 2)
+        self.label_player2_four = tk.Label(self, text = ""); self.label_player2_four.grid(row = 5, column = 2)
+        self.label_player2_five = tk.Label(self, text = ""); self.label_player2_five.grid(row = 6, column = 2)
+        self.label_player2_six = tk.Label(self, text = ""); self.label_player2_six.grid(row = 7, column = 2)
+        self.label_player2_top_sub_total = tk.Label(self, text = ""); self.label_player2_top_sub_total.grid(row = 8, column = 2)
+        self.label_player2_bonus = tk.Label(self, text = ""); self.label_player2_bonus.grid(row = 9, column = 2, sticky = "n")
+        self.label_player2_brelan = tk.Label(self, text = ""); self.label_player2_brelan.grid(row = 10, column = 2)
+        self.label_player2_carre = tk.Label(self, text = ""); self.label_player2_carre.grid(row = 11, column = 2)
+        self.label_player2_full = tk.Label(self, text = ""); self.label_player2_full.grid(row = 12, column = 2)
+        self.label_player2_small_suite = tk.Label(self, text = ""); self.label_player2_small_suite.grid(row = 13, column = 2)
+        self.label_player2_great_suite = tk.Label(self, text = ""); self.label_player2_great_suite.grid(row = 14, column = 2)
+        self.label_player2_yams = tk.Label(self, text = ""); self.label_player2_yams.grid(row = 15, column = 2)
+        self.label_player2_chance = tk.Label(self, text = ""); self.label_player2_chance.grid(row = 16, column = 2)
+        self.label_player2_sub_total = tk.Label(self, text = ""); self.label_player2_sub_total.grid(row = 17, column = 2)
+        self.label_player2_total = tk.Label(self, text = ""); self.label_player2_total.grid(row = 18, column = 2)
         
-        #shuffle dices and choose/apply combine buttuns and list
+        #shuffle dices and choose/apply combine buttons and list
         self.btnShuffleDices = tk.Button(self, text="Suffle Dices", command=self.shuffleDicesUI); self.btnShuffleDices.grid(row = 14, column = 6)
         self.comboChooseCombine = ttk.Combobox(self, 
             values=["1", "2", "3","4", "5", "6", "Brelan", "Carré", "Full", "Petite Suite", "Grande Suite", "Yams", "Chance"],
             state="readonly"); self.comboChooseCombine.grid(row = 16, column = 6)
         self.btnValidateDices = tk.Button(self, text="Sauve", command=self.validateDices); self.btnValidateDices.grid(row = 18, column = 6)
+        #Display Dices in the user interface
         #Dice 1
         diceOne = (Image.open('./assets/dices/de6.png')).resize((100,100)); renderDiceOne = ImageTk.PhotoImage(diceOne); imgDiceOne = tk.Label(self, image=renderDiceOne)
         imgDiceOne.image = renderDiceOne; imgDiceOne.grid(row = 9, column = 4, rowspan=4)
@@ -208,7 +208,7 @@ class GamePage(tk.Frame):
         ################## END PAGEGAME #####################
 
         #################### Interface Messagerie #######################
-
+        #Chat user interface
         btnReturn = tk.Button(self, text="Go back", command=self.goBack); btnReturn.grid(row = 0, column = 8, sticky="e", columnspan=2)
 
         textes = scrolledtext.ScrolledText(self, wrap = tk.WORD, width = 40,height = 10)
@@ -223,7 +223,8 @@ class GamePage(tk.Frame):
 
     # Game Functions
 
-    def validateDices(self): #add data to json file and display changes
+    def validateDices(self):
+        #Button fonction : Allow player to save a combination 
         if (self.comboChooseCombine.get() == ''):
             tk.messagebox.showwarning(title="Alerte", message="Veuillez selectionner une combinaison valide")
         else:
@@ -235,6 +236,7 @@ class GamePage(tk.Frame):
         
 
     def shuffleDicesUI(self): 
+        #Button funciton : allow the player to shuffle the dices 3 times
         self.btnValidateDices.config(state="normal")
         print('1 : ' + str(self.isOneChecked.get()) + ' | 2 : ' + str(self.isTwoChecked.get()) + ' | 3 : ' + str(self.isThreeChecked.get()) +' | 4 : ' + str(self.isFourChecked.get()) + ' | 5 : ' + str(self.isFiveChecked.get()))
         if self.isOneChecked.get() == 0:
@@ -302,7 +304,7 @@ class GamePage(tk.Frame):
         
 
     def ReturnScore(self, combine):
-        #Calcul des points marqué par le joueur
+        #Calculation of points for selected combinations
         dices = self.dicesNumbers 
         if combine == "1" or combine == "2" or combine == "3" or combine == "4" or combine == "5" or combine == "6":
             if combine == "1":
@@ -393,10 +395,12 @@ class GamePage(tk.Frame):
 
     # Messages function
     def goBack(self):
+        #Go back to login window
         self.controller.client.send("QUIT")
         self.controller.show_frame("StartPage")
 
     def sendMessage(self):
+        #send message to other users
         self.controller.client.send(self.entryMessage.get())
         self.entryMessage.delete(0, tk.END)
     
